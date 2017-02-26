@@ -1,0 +1,10 @@
+{
+  "name": "io.cordova.myapp3f37c7",
+  "app_id": "",
+  "gulpDependantTasks" : [
+    "sass"
+  ],  
+   "gulpStartupTasks": [        
+    "watch"
+  ]
+}

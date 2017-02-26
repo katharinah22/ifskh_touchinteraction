@@ -1,0 +1,36 @@
+<!--
+
+2.   Sie fahren auf der Autobahn und hören ihre Lieblingsplaylist. Sie bekommen einen Anruf und möchten die Musik pausieren. Anschließend möchten 
+     sie die Musik wieder starten. Das aktuelle Lied gefällt Ihnen nicht mehr, deshalb schalten Sie einen Song weiter. Der gefällt Ihnen so gut, 
+     dass Sie ihn ganz laut stellen wollen. 
+3. Sie wollen ins Zentrum von Regensburg fahren. Geben Sie dafür den Namen der Stadt ins Navi ein, bestätigen Sie die Auswahl und starten Sie die Navigation.
+
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive">
+
+    <!-- Klima Tab // Task 1 -->
+    <ion-tab title="Klima" icon-off="ion-ios-cloud-outline" icon-on="ion-ios-cloud" href="#/tab/klima">
+        <ion-nav-view name="tab-klima"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Audio Tab // Task 2 -->
+    <ion-tab title="Chats" icon-off="ion-ios-musical-note" icon-on="ion-ios-musical-notes" href="#/tab/chats">
+        <ion-nav-view name="tab-chats"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Navi Tab // Task 3 -->
+    <ion-tab title="Account" icon-off="ion-map" icon-on="ion-android-map" href="#/tab/navi">
+        <ion-nav-view name="tab-navi"></ion-nav-view>
+    </ion-tab>
+
+  <!-- 
+  <ion-tab title="Chats" icon-off="ion-ios-musical-note" icon-on="ion-ios-musical-notes" href="#/tab/chats">
+        <ion-nav-view name="tab-chats"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Account" icon-off="ion-map" icon-on="ion-android-map" href="#/tab/account">
+    <ion-nav-view name="tab-account"></ion-nav-view>
+  </ion-tab>
+  -->
+
+</ion-tabs>
