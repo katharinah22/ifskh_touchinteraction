@@ -1,5 +1,4 @@
 angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
-
 .controller('KlimaCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
 
     //Slider config with steps array of letters
@@ -82,7 +81,7 @@ app.directive('clickableLabel', function () {
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('NaviCtrl', function ($scope) {
   $scope.settings = {
     enableFriends: true
   };
