@@ -1,0 +1,26 @@
+<!-- Task 2: Audiosystem bedienen
+     Sie fahren auf der Autobahn und hören ihre Lieblingsplaylist. Sie werden durch einen Streifenwagen 
+     zu einer Verkehrskontrolle angewiesen. Dazu möchten Sie Musik pausieren. Anschließend möchten sie 
+     die Musik wieder starten. Das aktuelle Lied gefällt Ihnen nicht mehr, deshalb schalten Sie einen 
+     Song weiter. Der gefällt Ihnen so gut, dass Sie ihn ganz laut stellen wollen. 
+-->
+<ion-view view-title="Audio">
+  <ion-content class="padding">
+      <article>
+          <!-- Buttonbar/ Return, Select Inputdevice-->
+          <div id="audio-button-bar2" class="button-bar">
+              <button id="audio-button7" class="button button-positive  button-block">Tuner</button>
+              <button id="audio-button8" class="button button-positive  button-block">AUX</button>
+              <button id="audio-button9" class="button button-positive  button-block">CD</button>
+          </div>
+
+          <!-- music slider  << >> -->
+          <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider2" delegate-handle="slider2" id="audio-slider2" style="width:100%;height:200px;">
+              <ion-slide-page id="audio-slide210" style="background:url(&quot;img/PlaylistEx1.png&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+              <ion-slide-page id="audio-slide211" style="background:url(&quot;img/PlaylistEx1.png&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+              <ion-slide-page id="audio-slide212" style="background:url(&quot;img/PlaylistEx1.png&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+          </ion-slides>
+          <button id="audio-button10" class="button button-positive  button-block">Tap me!</button>
+      </article>
+  </ion-content>
+</ion-view>

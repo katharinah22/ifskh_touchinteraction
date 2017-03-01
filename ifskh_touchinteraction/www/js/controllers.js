@@ -1,14 +1,19 @@
 angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
+//.directive('clickableLabel', function () {
+//    return {
+//        restrict: 'E',
+//        scope: { label: '=' },
+//        replace: true,
+//        template: "<button ng-click='onclick(label)' style='cursor: pointer;'>click me - {{label}}</button>",
+//        link: function (scope, elem, attrs) {
+//            scope.onclick = function (label) {
+//                alert("I'm " + label);
+//            };
+//        }
+//    };
+//})
+
 .controller('KlimaCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
-
-    //Slider config with steps array of letters
-    $scope.slider_alphabet = {
-        value: 'E',
-        options: {
-            stepsArray: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
-        }
-    };
-
     //Vertical sliders
     $scope.verticalSlider3 = {
         value: 23,
@@ -45,41 +50,13 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
         }
     };
 
-});
-
-app.directive('clickableLabel', function () {
-    return {
-        restrict: 'E',
-        scope: { label: '=' },
-        replace: true,
-        template: "<button ng-click='onclick(label)' style='cursor: pointer;'>click me - {{label}}</button>",
-        link: function (scope, elem, attrs) {
-            scope.onclick = function (label) {
-                alert("I'm " + label);
-            };
-        }
-    };
 })
 
+.controller('AudioCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
 
-.controller('ChatsCtrl', function($scope, Chats) {
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
-})
 
 .controller('NaviCtrl', function ($scope) {
   $scope.settings = {

@@ -1,0 +1,28 @@
+<!-- Task 1: Klimatronik regulieren
+     Es ist Sommer und es ist sehr heiß. Deshalb möchten Sie die Temperatur im Auto von
+     23 auf 21 Grad regulieren. Anschließend möchten Sie zudem das Gebläse stärker stellen.
+-->
+<ion-view view-title="Klimatronik">
+  <ion-content class="padding">
+      <article>
+          <div class="section group">
+              <div class="col span_1_of_2">
+                  <header><h1>Temperatur</h1></header>
+                  <div class="row vertical-sliders" style="margin: 50px;">
+                      <div class="col-md-2">
+                          <rzslider rz-slider-model="verticalSlider3.value" rz-slider-options="verticalSlider3.options"></rzslider>
+                      </div>
+                  </div>
+              </div>
+              <div class="col span_1_of_2">
+                  <header><h1>Geblaese</h1></header>
+                  <div class="row vertical-sliders" style="margin: 50px;">
+                      <div class="col-md-2">
+                          <rzslider rz-slider-model="verticalSlider6.value" rz-slider-options="verticalSlider6.options"></rzslider>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </article>
+  </ion-content>
+</ion-view>
