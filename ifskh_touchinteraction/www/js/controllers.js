@@ -53,13 +53,50 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
 })
 
 .controller('AudioCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
-
+    //audio-btn_SS onClick() change Icon
 
 })
 
+//.directive('audio-btn_SS', function () {
+//    return {
+//        restrict: 'E',
+//        scope: { autoplay: '=' },
+//        template: '<i ng-class="{\'ion-ios-play\': autoplay, \'ion-ios-pause\': !autoplay}"></i>'
+//    }
+//})
 
-.controller('NaviCtrl', function ($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
+.controller('NaviCtrl', function ($scope, $ionicLoading) {
+
+    //// Getting the map selector in DOM
+    //var div = document.getElementById("map");
+
+    
+
+    //// Invoking Map using Google Map SDK v2 by dubcanada
+    //var map = plugin.google.getMap(div);
+      
+    //google.maps.event.addDomListener(window, 'load', function () {
+    //    var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
+
+    //    var mapOptions = {
+    //        center: myLatlng,
+    //        zoom: 16,
+    //        mapTypeId: google.maps.MapTypeId.ROADMAP
+    //    };
+
+    //    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+    //    navigator.geolocation.getCurrentPosition(function (pos) {
+    //        map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
+    //        var myLocation = new google.maps.Marker({
+    //            position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
+    //            map: map,
+    //            title: "My Location"
+    //        });
+    //    });
+
+    //    $scope.map = map;
+    //});
+
+
 });
