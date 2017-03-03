@@ -10,7 +10,7 @@ Taks 1
 Es ist Sommer und es ist sehr heiß. Deshalb möchten Sie die Temperatur im Auto von 23 auf 19 Grad regulieren. Anschließend möchten Sie zudem das Gebläse stärker stellen.
 
 Taks 2
-Sie fahren auf der Autobahn und hören ihre Lieblingsplaylist. Sie bekommen einen Anruf und möchten die Musik pausieren. Anschließend möchten sie die Musik wieder starten. Das aktuelle Lied gefällt Ihnen nicht mehr, deshalb schalten Sie einen Song weiter. Der gefällt Ihnen so gut, dass Sie ihn ganz laut stellen wollen.
+Sie fahren auf der Autobahn und hören ihre Lieblingsplaylist. Sie werden durch einen Streifenwagen zu einer Verkehrskontrolle angewiesen. Dazu möchten Sie Musik pausieren. Anschließend möchten Sie die Musik wieder starten. Das aktuelle Lied gefällt Ihnen nicht mehr, deshalb schalten Sie einen Song weiter. Der gefällt Ihnen so gut, dass Sie ihn ganz laut stellen wollen. 
 
 Task 3
 Sie wollen ins Zentrum von Regensburg fahren. Geben Sie dafür den Namen der Stadt ins Navi ein, bestätigen Sie die Auswahl und starten Sie die Navigation.
