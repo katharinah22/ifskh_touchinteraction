@@ -1,17 +1,4 @@
 angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
-//.directive('clickableLabel', function () {
-//    return {
-//        restrict: 'E',
-//        scope: { label: '=' },
-//        replace: true,
-//        template: "<button ng-click='onclick(label)' style='cursor: pointer;'>click me - {{label}}</button>",
-//        link: function (scope, elem, attrs) {
-//            scope.onclick = function (label) {
-//                alert("I'm " + label);
-//            };
-//        }
-//    };
-//})
 
 .controller('KlimaCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
     //Vertical sliders
@@ -49,21 +36,22 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
             }
         }
     };
-
 })
 
-.controller('AudioCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
-    //audio-btn_SS onClick() change Icon
-
-})
-
-//.directive('audio-btn_SS', function () {
-//    return {
-//        restrict: 'E',
-//        scope: { autoplay: '=' },
-//        template: '<i ng-class="{\'ion-ios-play\': autoplay, \'ion-ios-pause\': !autoplay}"></i>'
-//    }
-//})
+.controller('AudioCtrl', ['$scope', function($scope) {
+    $scope.count = 0;
+    $scope.btnSSClick = "ion-play";
+    var iconval = $scope.btnSSClick;
+    $scope.myFunc = function() {
+        $scope.count++;
+        if ($scope.count % 2 == 0) { //gerader Countervalue
+            $scope.btnSSClick = "ion-play";
+        }
+        else { //ungerader Countervalue
+            $scope.btnSSClick = "ion-pause";
+        }
+    };
+}])
 
 .controller('NaviCtrl', function ($scope, $ionicLoading) {
 
