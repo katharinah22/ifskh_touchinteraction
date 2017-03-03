@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!-- Maps Extension-->
+    <meta http-equiv="Content-Security-Policy" content="default-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src  'self' 'unsafe-inline' *">
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
@@ -40,7 +42,8 @@
     <script src="js/ui-bootstrap-tpls.js"></script>
 
     <!-- Maps Task 3-->
-    
+    <script src="js/angular-google-maps.min.js"></script>
+    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
 
   </head>
   <body ng-app="starter">

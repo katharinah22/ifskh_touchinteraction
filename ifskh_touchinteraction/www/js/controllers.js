@@ -1,5 +1,4 @@
 angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
-
 .controller('KlimaCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
     //Vertical sliders
     $scope.verticalSlider3 = {
@@ -53,38 +52,36 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
     };
 }])
 
-.controller('NaviCtrl', function ($scope, $ionicLoading) {
 
-    //// Getting the map selector in DOM
-    //var div = document.getElementById("map");
+.controller('NaviCtrl', function ($scope, $ionicSideMenuDelegate, $cordovaGeolocation) {
+    //$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+    $ionicSideMenuDelegate.canDragContent(false)
+    $scope.map = { center: { latitude: 40.1451, longitude: -99.6680 }, zoom: 8 };
+    $scope.options = { scrollwheel: false, mapTypeId: "roadmap" };
+    $scope.markericon = "img/moose.png";
+    $scope.markers = []
+    // get position of user and then set the center of the map to that position
+    $cordovaGeolocation
+      .getCurrentPosition()
+      .then(function (position) {
+          var lat = position.coords.latitude
+          var long = position.coords.longitude
+          $scope.map = { center: { latitude: lat, longitude: long }, zoom: 16 };
+          //just want to create this loop to make more markers
+          for (var i = 0; i < 3; i++) {
+              $scope.markers.push({
+                  id: $scope.markers.length,
+                  latitude: lat + (i * 0.002),
+                  longitude: long + (i * 0.002),
+                  icon: $scope.markericon,
+                  content: "I am located at " + lat + " ," + long
+              });
+          }
+          $scope.onMarkerClick = function (marker, eventName, model) {
+              model.show = !model.show;
+          }
 
-    
-
-    //// Invoking Map using Google Map SDK v2 by dubcanada
-    //var map = plugin.google.getMap(div);
-      
-    //google.maps.event.addDomListener(window, 'load', function () {
-    //    var myLatlng = new google.maps.LatLng(37.3000, -120.4833);
-
-    //    var mapOptions = {
-    //        center: myLatlng,
-    //        zoom: 16,
-    //        mapTypeId: google.maps.MapTypeId.ROADMAP
-    //    };
-
-    //    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-    //    navigator.geolocation.getCurrentPosition(function (pos) {
-    //        map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
-    //        var myLocation = new google.maps.Marker({
-    //            position: new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude),
-    //            map: map,
-    //            title: "My Location"
-    //        });
-    //    });
-
-    //    $scope.map = map;
-    //});
-
-
+      }, function (err) {
+          // error
+      });
 });
