@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
+angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
 .controller('KlimaCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
     //Vertical sliders
     $scope.verticalSlider3 = {
@@ -52,7 +52,27 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
     };
 }])
 
+.controller('NaviCtrl', function($scope, $state, $cordovaGeolocation) {
+  var options = {timeout: 10000, enableHighAccuracy: true};
+ 
+  $cordovaGeolocation.getCurrentPosition(options).then(function(position){
+ 
+    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+ 
+    var mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+ 
+    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+ 
+  }, function(error){
+    console.log("Could not get location");
+  });
+});
 
+/**
 .controller('NaviCtrl', function ($scope, $ionicSideMenuDelegate, $cordovaGeolocation) {
     //$scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
     $ionicSideMenuDelegate.canDragContent(false)
@@ -85,3 +105,4 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap'])
           // error
       });
 });
+**/
