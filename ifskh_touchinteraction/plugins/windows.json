@@ -1,0 +1,37 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "ifskh_touchinteraction"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "ifskh_touchinteraction"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "ifskh_touchinteraction"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "ifskh_touchinteraction"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "ifskh_touchinteraction"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "ifskh_touchinteraction"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "ifskh_touchinteraction"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "ifskh_touchinteraction"
+        }
+    }
+}
