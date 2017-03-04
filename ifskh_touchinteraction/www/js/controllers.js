@@ -105,6 +105,7 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
   }, function(error){
     console.log("Could not get location");
   });
+<<<<<<< HEAD
 
   $scope.createDestination = function(){
     var regensburg = new google.maps.LatLng(49.0134297, 12.1016236);
@@ -177,3 +178,6 @@ $scope.searchbar.placeholder = 'Regensburg';
       });
 });
 **/
+=======
+});
+>>>>>>> origin/master

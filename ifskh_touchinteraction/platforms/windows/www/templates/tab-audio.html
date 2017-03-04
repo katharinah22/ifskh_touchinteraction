@@ -1,0 +1,21 @@
+﻿<!-- Task 2: Audiosystem bedienen
+     Sie fahren auf der Autobahn und h�ren ihre Lieblingsplaylist. Sie werden durch einen Streifenwagen 
+     zu einer Verkehrskontrolle angewiesen. Dazu m�chten Sie Musik pausieren. Anschlie�end m�chten sie 
+     die Musik wieder starten. Das aktuelle Lied gef�llt Ihnen nicht mehr, deshalb schalten Sie einen 
+     Song weiter. Der gef�llt Ihnen so gut, dass Sie ihn ganz laut stellen wollen. 
+-->
+<ion-view view-title="Audio">
+  <ion-content class="padding">
+      <article>
+          <!-- music slider  << >> -->
+          <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider2" delegate-handle="slider2" id="audio-slider2" style="width:100%;height:600px;">
+              <ion-slide-page id="audio-slide210" style="background:url(&quot;img/slidepic1.png&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+              <ion-slide-page id="audio-slide211" style="background:url(&quot;img/slidepic2.png&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+              <ion-slide-page id="audio-slide212" style="background:url(&quot;img/slidepic3.png&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
+          </ion-slides>
+          <!--Wiedergabe Button: Start/ Stop ion-play/ ion-pause-->
+          <button id="audio-btn_SS" class="button button-dark button-block" ng-click="myFunc()"> <i class="icon {{btnSSClick}}"></i></button>
+      </article>
+  </ion-content>
+</ion-view>
+
