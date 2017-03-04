@@ -8,17 +8,16 @@
             <i class="icon ion-search placeholder-icon"></i>
             <input type="search" placeholder="Stadt...">
         </label>-->
-        
-        <label class="item-input-wrapper" id="searchLabel">
-            <i class="icon ion-ios7-search placeholder-icon"></i>
-            <input id="searchbar" type="search" placeholder="Search" ng-change="search()" ng-model="data.search">
-        </label>
-         <button class="button button-search" id="searchButton" ng-click="createDestination()">Navigation starten</button>      
-        
-    
-        <div class="list">
-            <li class="item" ng-click="replaceSearch()" ng-repeat="city in data.cities">{{city}}</li>
-        </div>
+        <article>
+            <label class="item-input-wrapper" id="searchLabel">
+                <i class="icon ion-ios7-search placeholder-icon"></i>
+                <input id="searchbar" type="search" placeholder="Search" ng-change="search()" ng-model="data.search">
+            </label>
+            <button class="button button-search" id="searchButton" ng-click="createDestination()">Navigation starten</button>
+            <div class="list">
+                <li class="item" ng-click="replaceSearch()" ng-repeat="city in data.cities">{{city}}</li>
+            </div>
+        </article>
         <div id="map" data-tap-disabled="true"></div>
-    </ion-content>
+</ion-content>
 </ion-view>
