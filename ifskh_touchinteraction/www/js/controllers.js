@@ -1,8 +1,10 @@
 angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
-    .controller('KlimaCtrl', function($scope, $rootScope, $timeout, $uibModal) {
+    .controller('KlimaCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
+
+        var tempval = 23;
         //Vertical sliders
         $scope.verticalSlider3 = {
-            value: 23,
+            value: tempval,
             options: {
                 floor: 16,
                 ceil: 30,
@@ -35,20 +37,76 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
                 }
             }
         };
+
+        // init gesture recognition
+        $scope.gesture = {
+            used: ''
+        };
+        $scope.onGesture = function (gesture) {
+            $scope.gesture.used = gesture;
+            console.log(gesture);
+
+            if ((gesture == "Swipe Up") || (gesture == "Drag Up")) { // turn up temperatur  
+                
+
+            } else if ((gesture == "Swipe Down") || (gesture == "Drag Up")) { // turn down temperatur
+                tempval--;
+                $scope.verticalSlider3 = {
+                    value: tempval,
+                    options: {
+                        floor: 16,
+                        ceil: 30,
+                        vertical: true,
+                        showTicksValues: true,
+                        showSelectionBar: true,
+                        getSelectionBarColor: function (value) {
+                            if (value <= 20)
+                                return '#24a9d6'; // blue
+                            if (value <= 25)
+                                return '#f9f907'; // yellow
+                            if (value <= 30)
+                                return '#e2510d'; // red
+                            return '#2AE02A';
+                        }
+                    }
+                };
+            }
+        }
     })
 
-    .controller('AudioCtrl', ['$scope', function($scope) {
+    .controller('AudioCtrl', ['$scope', function ($scope, $ionicGesture) {
+
+        // button play/ stop init
         $scope.count = 0;
         $scope.btnSSClick = "ion-play";
-        var iconval = $scope.btnSSClick;
-        $scope.myFunc = function() {
-            $scope.count++;
-            if ($scope.count % 2 == 0) { //gerader Countervalue
-                $scope.btnSSClick = "ion-play";
-            } else { //ungerader Countervalue
-                $scope.btnSSClick = "ion-pause";
-            }
+
+        // init gesture recognition
+        $scope.gesture = {
+            used: ''
         };
+
+        $scope.onGesture = function (gesture) {
+            $scope.gesture.used = gesture;
+            console.log(gesture);
+
+            if (gesture == "Double-Tap") { // start stop 
+                $scope.count++;
+                if ($scope.count % 2 == 0) { //gerader Countervalue
+                    $scope.btnSSClick = "ion-play";
+                } else { //ungerader Countervalue
+                    $scope.btnSSClick = "ion-pause";
+                }
+            } else if (gesture == "Swipe Right") { //pervious track
+
+            } else if (gesture == "Swipe Left") { //next track
+
+            } else if (gesture == "Swipe Up") { // turn up volume           
+
+            } else if (gesture == "Swipe Down") { // turn down volume
+
+            }
+        }
+    
     }])
 
     .controller('NaviCtrl', function($scope, $state, $cordovaGeolocation, NavDataService) {

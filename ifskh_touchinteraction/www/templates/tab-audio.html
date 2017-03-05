@@ -2,10 +2,14 @@
      Sie fahren auf der Autobahn und hören ihre Lieblingsplaylist. Sie werden durch einen Streifenwagen 
      zu einer Verkehrskontrolle angewiesen. Dazu möchten Sie Musik pausieren. Anschließend möchten sie 
      die Musik wieder starten. Das aktuelle Lied gefällt Ihnen nicht mehr, deshalb schalten Sie einen 
-     Song weiter. Der gefällt Ihnen so gut, dass Sie ihn ganz laut stellen wollen. 
+     Song weiter. 
 -->
 <ion-view view-title="Audio">
-  <ion-content class="padding">
+  <ion-content class="padding" id="contentTab2" on-swipe-right="onGesture('Swipe Right')"
+                                                on-swipe-left ="onGesture('Swipe Left')" 
+                                                on-double-tap="onGesture('Double-Tap')"
+                                                on-swipe-up="onGesture('Swipe Up')"
+                                                on-swipe-down="onGesture('Swipe Down')">
       <article>
           <!-- music slider  << >> -->
           <ion-slides disable-side-menu-drag="" options="{'loop': true}" slider="slider2" delegate-handle="slider2" id="audio-slider2" style="width:100%;height:600px;">
@@ -15,6 +19,7 @@
           </ion-slides>
           <!--Wiedergabe Button: Start/ Stop ion-play/ ion-pause-->
           <button id="audio-btn_SS" class="button button-dark button-block" ng-click="myFunc()"> <i class="icon {{btnSSClick}}"></i></button>
+          <!--<h3 style="text-align: center;">Used touch gesture: {{gesture.used}} Count {{count}}</h3>-->
       </article>
   </ion-content>
 </ion-view>
