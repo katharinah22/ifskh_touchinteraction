@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 // 'ngCordova' for mapintegration tab3/ NaviCtrl
 // 'starter.navdata' in navdata.js for taks 3
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.navdata'])
+angular.module('starter', ['ionic', 'ngCordova', 'starter.controllers', 'starter.navdata'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
