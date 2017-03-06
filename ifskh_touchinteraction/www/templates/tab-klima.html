@@ -20,7 +20,12 @@
                   </div>
                   <h3 style="text-align: center;">Used touch gesture: {{gesture.used}}</h3>
               </div>
-              <div class="col span_1_of_2">
+              <div class="col span_1_of_2"   on-drag-down="onGesture('Drag Down')"
+                                            on-drag-up="onGesture('Drag Up')"
+                                            on-swipe-down="onGesture('Swipe Down')"
+                                            on-swipe-up="onGesture('Swipe Up')"
+                                            on-swipe-right="onGesture('Swipe Right')"
+                                            on-swipe-left ="onGesture('Swipe Left')">
                   <header><h1>Geblaese</h1></header>
                   <div class="row vertical-sliders" style="margin: 50px;">
                       <div class="col-md-2">
