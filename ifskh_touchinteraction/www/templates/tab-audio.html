@@ -17,8 +17,18 @@
               <ion-slide-page id="audio-slide211" style="background:url(&quot;img/slidepic2.png&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
               <ion-slide-page id="audio-slide212" style="background:url(&quot;img/slidepic3.png&quot;) no-repeat center;background-size:cover;"></ion-slide-page>
           </ion-slides>
-          <!--Wiedergabe Button: Start/ Stop ion-play/ ion-pause-->
-          <button id="audio-btn_SS" class="button button-dark button-block" ng-click="myFunc()"> <i class="icon {{btnSSClick}}"></i></button>
+
+          
+
+          <!-- Slider volume control-->
+          <div id="audio-button-bar2" class="button-bar">
+              <button id="audio-vollow" class="button button-dark  button-block"><i class="ion-volume-low"></i></button>
+              <!--<button id="audio-volmed" class="button button-dark  button-block"><i class="icon ion-volume-medium"></i></button>-->
+              <!--Wiedergabe Button: Start/ Stop ion-play/ ion-pause-->
+              <button id="audio-btn_SS" class="button button-dark button-block" ng-click="myFunc()"> <i class="icon {{btnSSClick}}"></i></button>
+              <button id="audio-volhigh" class="button button-dark  button-block"><i class="icon ion-volume-high"></i></button>
+          </div>
+          <!--<rzslider rz-slider-model="verticalSlider1.value" rz-slider-options="verticalSlider1.options"></rzslider> -->
           <!--<h3 style="text-align: center;">Used touch gesture: {{gesture.used}} Count {{count}}</h3>-->
       </article>
   </ion-content>

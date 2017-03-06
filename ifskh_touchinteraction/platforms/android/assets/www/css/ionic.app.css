@@ -9884,3 +9884,7 @@ a.button {
 
 #searchbar {
   background: transparent; }
+
+#cityList {
+  float: left;
+  width: 100%; }

@@ -11,10 +11,10 @@
             </label>
             <button class="button button-search" id="searchButton" ng-click="createDestination()">Navigation starten</button>
 
-            <div class="list">
+            <div class="list" id="cityList">
                 <li class="item" ng-click="replaceSearch()" ng-repeat="city in data.cities">{{city}}</li>
             </div>
         </article>
-        <div id="map" data-tap-disabled="true"></div>
+        <div id="map" data-tap-disabled="true"  on-release="onGesture('Release')" on-double-tap="onGesture('Double-Tap')"></div>
 </ion-content>
 </ion-view>

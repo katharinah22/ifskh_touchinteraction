@@ -2,6 +2,7 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
     .controller('KlimaCtrl', function ($scope, $rootScope, $timeout, $uibModal) {
 
         var tempval = 23;
+        var fanval = 1;
         //Vertical sliders
         $scope.verticalSlider3 = {
             value: tempval,
@@ -25,7 +26,7 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
         };
 
         $scope.verticalSlider6 = {
-            value: 1,
+            value: fanval,
             options: {
                 floor: 0,
                 ceil: 6,
@@ -46,10 +47,29 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
             $scope.gesture.used = gesture;
             console.log(gesture);
 
-            if ((gesture == "Swipe Up") || (gesture == "Drag Up")) { // turn up temperatur  
-                
+            if ((gesture == "Swipe Up")) { // turn up temperatur  || (gesture == "Drag Up")
+                tempval++;
+                $scope.verticalSlider3 = {
+                    value: tempval,
+                    options: {
+                        floor: 16,
+                        ceil: 30,
+                        vertical: true,
+                        showTicksValues: true,
+                        showSelectionBar: true,
+                        getSelectionBarColor: function (value) {
+                            if (value <= 20)
+                                return '#24a9d6'; // blue
+                            if (value <= 25)
+                                return '#f9f907'; // yellow
+                            if (value <= 30)
+                                return '#e2510d'; // red
+                            return '#2AE02A';
+                        }
+                    }
+                };
 
-            } else if ((gesture == "Swipe Down") || (gesture == "Drag Up")) { // turn down temperatur
+            } else if ((gesture == "Swipe Down")) { // turn down temperatur || (gesture == "Drag Down")
                 tempval--;
                 $scope.verticalSlider3 = {
                     value: tempval,
@@ -70,6 +90,38 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
                         }
                     }
                 };
+            } else if (gesture == "Swipe Left") { // turn down fan
+                fanval--;
+                $scope.verticalSlider6 = {
+                    value: fanval,
+                    options: {
+                        floor: 0,
+                        ceil: 6,
+                        vertical: true,
+                        showSelectionBar: true,
+                        showTicksValues: true,
+                        ticksValuesTooltip: function(v) {
+                            return 'Tooltip for ' + v;
+                        }
+                    }
+                };
+
+            } else if (gesture == "Swipe Right") { // turn up fan
+                fanval++;
+                $scope.verticalSlider6 = {
+                    value: fanval,
+                    options: {
+                        floor: 0,
+                        ceil: 6,
+                        vertical: true,
+                        showSelectionBar: true,
+                        showTicksValues: true,
+                        ticksValuesTooltip: function(v) {
+                            return 'Tooltip for ' + v;
+                        }
+                    }
+                };
+
             }
         }
     })
@@ -84,6 +136,26 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
         $scope.gesture = {
             used: ''
         };
+
+        $scope.myFunc = function() {
+            $scope.count++;
+            if ($scope.count % 2 == 0) { //gerader Countervalue
+                $scope.btnSSClick = "ion-play";
+            }
+            else { //ungerader Countervalue
+                $scope.btnSSClick = "ion-pause";
+            }
+        };
+
+        //$scope.verticalSlider1 = {
+        //    value: 15,
+        //    options: {
+        //        floor: 0,
+        //        ceil: 30,
+        //        showTicksValues: false,
+        //        showSelectionBar: true
+        //    }
+        //};
 
         $scope.onGesture = function (gesture) {
             $scope.gesture.used = gesture;
@@ -111,6 +183,7 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
 
     .controller('NaviCtrl', function($scope, $state, $cordovaGeolocation, NavDataService) {
         var currentPos;
+        var letterCount = 0;
         $scope.data = {
             "cities": [],
             "search": ''
@@ -124,7 +197,6 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
                 }
             )
         }
-
 
         var options = {
             timeout: 10000,
@@ -197,6 +269,47 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
             }
             $scope.searchbar = document.getElementById("searchbar");
             $scope.searchbar.placeholder = 'Regensburg';
+            letterCount = 10;
         };
+
+        // init gesture recognition
+        $scope.gesture = {
+            used: ''
+        };
+        
+        $scope.onGesture = function (gesture) {
+            $scope.gesture.used = gesture;
+            console.log(gesture);
+
+            if (gesture == "Release") { // start stop 
+                letterCount++;
+                if (letterCount == 1) { //add new letter to searchbar
+                    $scope.data.search = "R";
+                } else if(letterCount == 2){
+                    $scope.data.search = "Re";
+                    $scope.search();
+                } else if(letterCount == 3){
+                    $scope.data.search = "Reg";
+                    $scope.search();
+                } else if(letterCount == 4){
+                    $scope.data.search = "Rege";
+                    $scope.search();
+                } else if(letterCount == 5){
+                    $scope.data.search = "Regen";
+                    $scope.search();
+                } else if(letterCount == 6){
+                    $scope.data.search = "Regens";
+                    $scope.search();
+                } else if(letterCount > 6){
+                    $scope.data.search = "Regensburg"
+                }
+            } else if (gesture == "Double-Tap") { //enter search
+                if(letterCount >= 3){
+                    letterCount = -1;
+                    $scope.replaceSearch();
+                    $scope.createDestination();
+                }  
+            } 
+        }
 
     });

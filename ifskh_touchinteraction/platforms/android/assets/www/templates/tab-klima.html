@@ -3,31 +3,31 @@
      23 auf 19 Grad regulieren. Anschließend möchten Sie zudem das Gebläse stärker stellen.
 -->
 <ion-view view-title="Klimatronik">
-  <ion-content class="padding">
+  <ion-content class="padding"  on-drag-down="onGesture('Drag Down')"
+                                on-drag-up="onGesture('Drag Up')"
+                                on-swipe-down="onGesture('Swipe Down')"
+                                on-swipe-up="onGesture('Swipe Up')"
+                                on-swipe-right="onGesture('Swipe Right')"
+                                on-swipe-left ="onGesture('Swipe Left')" >
       <article>
           <div class="section group">
-              <div class="col span_1_of_2"  on-drag-down="onGesture('Drag Down')"
-                                            on-drag-up="onGesture('Drag Up')"
-                                            on-swipe-down="onGesture('Swipe Down')"
-                                            on-swipe-up="onGesture('Swipe Up')"
-                                            on-swipe-right="onGesture('Swipe Right')"
-                                            on-swipe-left ="onGesture('Swipe Left')" >
-                  <header><h1>Temperatur</h1></header>
+              <div class="col span_1_of_2">
+                  <header><h1><i class="icon ion-thermometer"></i></h1></header>
                   <div class="row vertical-sliders" style="margin: 50px;">
                       <div class="col-md-2">
                           <rzslider rz-slider-model="verticalSlider3.value" rz-slider-options="verticalSlider3.options"></rzslider>
                       </div>
                   </div>
-                  <h3 style="text-align: center;">Used touch gesture: {{gesture.used}}</h3>
               </div>
               <div class="col span_1_of_2">
-                  <header><h1>Geblaese</h1></header>
+                  <header><h1><i class="icon ion-nuclear"></i></h1></header>
                   <div class="row vertical-sliders" style="margin: 50px;">
                       <div class="col-md-2">
                           <rzslider rz-slider-model="verticalSlider6.value" rz-slider-options="verticalSlider6.options"></rzslider>
                       </div>
                   </div>
               </div>
+              <!--<h3 style="text-align: center;">Used touch gesture: {{gesture.used}}</h3> -->
           </div>
       </article>
   </ion-content>

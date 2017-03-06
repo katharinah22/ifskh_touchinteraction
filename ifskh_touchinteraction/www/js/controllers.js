@@ -47,7 +47,7 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
             $scope.gesture.used = gesture;
             console.log(gesture);
 
-            if ((gesture == "Swipe Up") || (gesture == "Drag Up")) { // turn up temperatur  
+            if ((gesture == "Swipe Up")) { // turn up temperatur  || (gesture == "Drag Up")
                 tempval++;
                 $scope.verticalSlider3 = {
                     value: tempval,
@@ -69,7 +69,7 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
                     }
                 };
 
-            } else if ((gesture == "Swipe Down") || (gesture == "Drag Down")) { // turn down temperatur
+            } else if ((gesture == "Swipe Down")) { // turn down temperatur || (gesture == "Drag Down")
                 tempval--;
                 $scope.verticalSlider3 = {
                     value: tempval,
@@ -90,8 +90,8 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
                         }
                     }
                 };
-            } else if (gesture == "Swipe Left") { // turn up fan
-                fanval++;
+            } else if (gesture == "Swipe Left") { // turn down fan
+                fanval--;
                 $scope.verticalSlider6 = {
                     value: fanval,
                     options: {
@@ -106,8 +106,8 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
                     }
                 };
 
-            } else if (gesture == "Swipe Right") { // turn down fan
-                fanval--;
+            } else if (gesture == "Swipe Right") { // turn up fan
+                fanval++;
                 $scope.verticalSlider6 = {
                     value: fanval,
                     options: {
@@ -137,15 +137,25 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
             used: ''
         };
 
-         $scope.myFunc = function() {
-        $scope.count++;
-        if ($scope.count % 2 == 0) { //gerader Countervalue
-            $scope.btnSSClick = "ion-play";
-        }
-        else { //ungerader Countervalue
-            $scope.btnSSClick = "ion-pause";
-        }
-    };
+        $scope.myFunc = function() {
+            $scope.count++;
+            if ($scope.count % 2 == 0) { //gerader Countervalue
+                $scope.btnSSClick = "ion-play";
+            }
+            else { //ungerader Countervalue
+                $scope.btnSSClick = "ion-pause";
+            }
+        };
+
+        //$scope.verticalSlider1 = {
+        //    value: 15,
+        //    options: {
+        //        floor: 0,
+        //        ceil: 30,
+        //        showTicksValues: false,
+        //        showSelectionBar: true
+        //    }
+        //};
 
         $scope.onGesture = function (gesture) {
             $scope.gesture.used = gesture;
@@ -187,7 +197,6 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
                 }
             )
         }
-
 
         var options = {
             timeout: 10000,
@@ -299,8 +308,7 @@ angular.module('starter.controllers', ['rzModule', 'ui.bootstrap', 'ngCordova'])
                     letterCount = -1;
                     $scope.replaceSearch();
                     $scope.createDestination();
-                } 
-                
+                }  
             } 
         }
 
